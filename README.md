@@ -1,1 +1,1 @@
-# Predicting-Telco-Churn
+# Predicting Telco Churn
