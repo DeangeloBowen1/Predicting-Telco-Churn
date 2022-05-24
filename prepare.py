@@ -141,7 +141,7 @@ def prep_telco(telco):
     
     # drop specific columns
     telco = telco.drop(['internet_service_type_id', 'payment_type_id', 'contract_type_id',
-                  'customer_id', 'online_security', 'online_backup', 'device_protection',
+                  'online_security', 'online_backup', 'device_protection',
                   'tech_support', 'streaming_tv', 'streaming_movies'], axis= 1)
     
     # strip spaces from total charges, turn into a float
@@ -157,11 +157,15 @@ def prep_telco(telco):
     telco['churn'] = telco.churn.map({'Yes': 1, 'No': 0})
     
     # create dummy for cat cols to numeric cols
-    dummy_telco = pd.get_dummies(telco[['gender', 'multiple_lines', 'contract_type',
+    dummy_telco = pd.get_dummies(telco[['multiple_lines', 'contract_type',
                                      'payment_type', 'internet_service_type']])
     
     # concat
     telco = pd.concat([telco, dummy_telco], axis = 1)
+
+    # drop unneeded columns from the dummies concat
+    telco = telco.drop(['multiple_lines_No', 'multiple_lines_No phone service',
+                        'multiple_lines_Yes'], axis =1)
     
     # train validate test
     train, validate, test = split_telco_data(telco)
