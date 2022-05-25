@@ -127,6 +127,61 @@ def split_telco_data(telco):
     train,validate = train_test_split(train_validate, test_size=.3,
                                      random_state=123,
                                      stratify=train_validate.churn)
+
+    # Test Dataset
+    
+    # mapping gender
+    train.gender = train.gender.map({'Male':1 , 'Female':0})
+    train.gender.head()
+
+    #mapping yes = 1, no = 1
+    train.multiple_lines = train.multiple_lines.map({'Yes': 1, 'No': 0,
+                                                     'No phone service':2})
+
+    # drop columns for which I have a numerical dummy column for
+    drop_columns1 = ['contract_type', 'payment_type', 'internet_service_type']
+    train = train.drop(columns = drop_columns1)
+
+    # Validate Dataset
+
+    # mapping gender
+    validate.gender = validate.gender.map({'Male':1 , 'Female':0})
+    validate.gender.head()
+
+    #mapping yes = 1, no = 1
+    validate.multiple_lines = validate.multiple_lines.map({'Yes': 1, 'No': 0,
+                                                     'No phone service':2})
+
+    # drop columns for which I have a numerical dummy column for
+    drop_columns2 = ['contract_type', 'payment_type', 'internet_service_type']
+    validate = validate.drop(columns = drop_columns2)
+
+    # Test Dataset
+    # mapping gender
+    test.gender = test.gender.map({'Male':1 , 'Female':0})
+    test.gender.head()
+
+    #mapping yes = 1, no = 1
+    test.multiple_lines = test.multiple_lines.map({'Yes': 1, 'No': 0,
+                                                     'No phone service':2})
+
+    # drop columns for which I have a numerical dummy column for
+    drop_columns3 = ['contract_type', 'payment_type', 'internet_service_type']
+    test = test.drop(columns = drop_columns3)
+
+    # renaming columns
+    train = train.rename(columns={'gender': 'is_male',
+                              'contract_type_Month-to-month': 'month_to_month_contract',
+                             'contract_type_One year': 'one_year_contract',
+                              'ontract_type_Two year': 'two_year_contract', 
+                              'payment_type_Bank transfer (automatic)': 'bank_transfer_pay',
+                              'payment_type_Credit card (automatic)': 'credit_card_pay', 
+                              'payment_type_Electronic check': 'electronic_check_pay', 
+                              'payment_type_Mailed check': 'mailed_check_pay', 
+                              'internet_service_type_DSL': 'DSL_internet', 
+                              'internet_service_type_Fiber optic': 'fiber_optic_internet', 
+                              'internet_service_type_None': 'no_internet'})
+    
     return train, validate, test
 
 
