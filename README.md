@@ -41,15 +41,6 @@ payment_type | how the customer pays balance | object |
 is_male | whether customer is male or not | uint8 |
 has_partner | whether customer has partner or not | uint8 |
 has_dependents | whether customer has dependents or not | uint8 |
-online_security | whether customer has online security or not | uint8 |
-online_backup | whether customer has online back up or not |uint8 |
-phone_service | whether customer has phone service or not | uint8 |
-device_protection | whether customer has device protection or not | uint8 |
-tech_support | whether customer has tech support or not | uint8 |
-streaming_tv | whether customer streams tv or not | uint8  |
-streaming_movies | whether customer streams movies or not | uint |
-paperless_billing | whether customer has paperless billing or not | uint8 |
-one_line | whether customer has one line or not | uint8 |
 no_phone_service | whether customer has no phone service or not | uint8 |
 has_multiple_lines | whether customer has multiple lines or not | uint8 |
 month_to_month_contract | whether customer has month to month or not | uint8 |
@@ -58,11 +49,10 @@ two_year_contact | whether customer has two year contract or not | uint8 |
 dsl_internet | whether customer has dsl internet or not | uint8 |
 fiber_optic_internet | whether custome rhas fiber optic or not | uint8 |
 no_internet_service | whether a customer has no internet or not | uint8 |
-bank_transfer_autopay | whether a customer pays via bank transfer | uint8 |
-credit_card_autopay | whether a customer pays via credit card | uint8 |
-electronic_check_nonauto | whether a customer pays via e-check | uint8 |
-mailed_check_nonauto | whether a customer pays via mailed check | uint8 |
-is_autopay | whether a customer has autopay or not | uint8 |
+bank_transfer_pay | whether a customer pays via bank transfer | uint8 |
+credit_card_pay | whether a customer pays via credit card | uint8 |
+electronic_check_pay | whether a customer pays via e-check | uint8 |
+mailed_check_pay | whether a customer pays via mailed check | uint8 |
     
 ---
 ## Project Plan
