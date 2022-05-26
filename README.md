@@ -106,8 +106,8 @@ mailed_check_pay | whether a customer pays via mailed check | uint8 |
    - You will need an env file with database credentials saved to your working directory database credentials with CodeUp database (username, password, hostname) 
    - Create a gitignore with env file inside to prevent sharing of credentials
    - Download the acquire.py and prepare.py (model.py and explore.py are optional) files to working directory
-    - Create a final notebook to your working directory
-    - Review this README.md
-    - Libraries used are pandas, matplotlib, Scipy, sklearn, seaborn, and numpy
-    - Run predicting_telco_churn.ipynb
-    - Create a .csv file with the predictions from your ML model of at risk customers
+   - Create a final notebook to your working directory
+   - Review this README.md
+   - Libraries used are pandas, matplotlib, Scipy, sklearn, seaborn, and numpy
+   - Run predicting_telco_churn.ipynb
+   - Create a .csv file with the predictions from your ML model of at risk customers
