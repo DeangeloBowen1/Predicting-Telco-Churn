@@ -109,5 +109,5 @@ mailed_check_pay | whether a customer pays via mailed check | uint8 |
     - Create a final notebook to your working directory
     - Review this README.md
     - Libraries used are pandas, matplotlib, Scipy, sklearn, seaborn, and numpy
-    - Run telco_final.ipynb
+    - Run predicting_telco_churn.ipynb
     - Create a .csv file with the predictions from your ML model of at risk customers
